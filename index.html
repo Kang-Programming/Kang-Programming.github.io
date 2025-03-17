@@ -1,1 +1,46 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js 예제</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <button @click="changeMessage">메시지 변경</button>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    message: "안녕하세요, Vue.js!"
+                };
+            },
+            methods: {
+                changeMessage() {
+                    this.message = "Vue.js로 동적인 UI 만들기!";
+                }
+            }
+        }).mount("#app");
+    </script>
+
+</body>
+</html>
